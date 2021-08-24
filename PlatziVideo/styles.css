@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #585F73;
+    font-family: 'Mulish', sans-serif;
+}
+/* ============================== H E A D E R ============================ */
+.header {
+    /* background: linear-gradient(to top, rgb(166, 82, 51, 1) 20%, rgba(242, 170, 82, 1) 150%); */
+    /* background-color: #585F73; */
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__img {
+    width: 120px;
+    margin-left: 16px;
+}
+.header__menu {
+    margin-right: 20px;
+}
+.header__menu ul{
+    width: 100px;
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    text-align: right;
+    margin: 0 0 0 -32px;
+}
+.header__menu:hover ul, ul:hover{
+    display: block;
+}
+.header__menu li {
+    margin: 10px  0px;
+}
+.header__menu li a{
+    text-decoration: none;
+    color: white;
+}
+.header__menu li a:hover{
+    text-decoration: underline;   
+}
+.header__menu--profile {
+    margin-right: 8px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+.header__menu--profile img {
+    margin-right: 8px;
+    width: 40px;
+}
+.header__menu--profile p img {
+    margin: 0px;
+    width: 12px;
+    color: white;
+}
+
+/* =================================== M A I N ================================== */
+.main {
+    background: linear-gradient(to top, rgb(26, 27, 38, 1) 0%, rgba(88, 95, 115, 0) 100%);
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main__title{
+    font-size: 28px;
+    color: white;
+    margin-top: 0;
+}
+.main__input {
+    border: 2px solid #585F73;
+    border-radius: 25px;
+    width: 70%;
+    height: 40px;
+    padding: 0px 20px;
+    font-family: 'Mili', sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+    caret-color: #F2AA52;
+}
+::placeholder {
+    color: #585F73;
+}
+.main__input:focus {
+    outline: none;
+}
+/* ================================== C O V E R ========================================= */
+.cover {
+    height: 488px;
+    width: 100%;
+    position: relative;
+}
+.cover__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+.cover__container {
+    background: linear-gradient(to top, rgb(26, 27, 38, 1) 0%, rgba(26, 27, 38, 0) 200%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    opacity: 0;
+    transition: 2450ms opacity;  
+    /* transition: opacity 0.9s linear; */
+    /* transition:width 20s, opacity 0.6s; */
+    position: absolute;
+    /* transition: opacity 0.5s ease-out; */
+    /* transition: background-color .9; */
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.cover__container:hover {
+    opacity: 1;
+}
+
+ .cover__details {
+    bottom: 0;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    position: absolute;
+    width: 28%;
+    color: white;
+    transition: 2450ms opacity;
+    opacity: 1;
+}
+.cover__details h3 {
+    font-size: 34px;
+    font-weight: bold;
+}
+.cover__details p {
+    width: 100%;
+    font-size: 16px;
+}
+.cover__actions {
+    margin-top: 16px;
+    display: flex;
+}
+.cover__button--white {
+    width: 180px;
+    border-radius: 4px;
+    background-color: #585F73;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    border: none;
+    cursor: pointer;
+}
+.cover__button--black {
+    height: 40px;
+    background-color: #1A1B26;
+    color: white;
+    width: 180px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
+.cover__actions img {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+}
+
+/* ============================= C A R O U S E L =================================== */
+.carousel {
+    background: linear-gradient(to top, rgb(88, 95, 115, .8) 20%, rgba(26, 27, 38, 1) 90%);
+    width: 100%;
+    overflow: hidden;
+    /* padding: 30px 0; */
+    position: relative;
+    border-bottom: 4px;
+}
+.carousel__container {
+    white-space: nowrap;
+    margin: 44px 8px 60px;
+}
+.carousel__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    color: white;
+}
+.carousel-item {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 8px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 1240ms all;
+    transform-origin: center left;
+    position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item {
+    transform: translate3d(100px, 0, 0);
+}
+.carousel__container:hover .carousel-item {
+    opacity: 0.3;
+} 
+.carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+}
+.carousel-item__details:hover {
+    opacity: 1;
+}
+.carousel-item__details img {
+    width: 20px;
+    margin: 0 4px; 
+}
+.carousel-item__details p {
+    margin-left: 4px;
+}
+
+/* ==================================== L O  G I N =================================== */
+.login {
+    background: linear-gradient(to top, rgb(88, 95, 115, .8) 20%, rgba(26, 27, 38, 1) 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+}
+.login__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.login__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.login__container--form label {
+    font-size: 14px;
+}
+.login__container--remember-me {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login__container--remember-me a {
+    color:white;
+    font-size: 14px;
+    text-decoration: none;
+}
+.login__container--remember-me a:hover {
+    color:white;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.login__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.login__container--social-media > div > img {
+   width: 30px;
+   margin-right: 10px;
+}
+.login__container--signup {
+   font-size: 14px; 
+}
+.login__container--signup a {
+    font-size: 16px; 
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+ }
+ .login__container--signup a:hover {
+    text-decoration: underline;
+ }
+.input {
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 2px solid white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding:  0 20px;
+    outline: none;
+    height: 50px;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;letter-spacing: 1px;
+    margin: 10px 0;
+}
+/* ================================= S I G N U P ===================================== */
+.signup {
+    background: linear-gradient(to top, rgb(88, 95, 115, .8) 20%, rgba(26, 27, 38, 1) 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+}
+.signup__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.signup__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.signup__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.signup__container--social-media > div > img {
+   width: 30px;
+   margin-right: 10px;
+}
+.signup__container--login {
+   font-size: 14px;
+   display: flex; 
+   justify-content: center;
+}
+.signup__container--login a {
+    font-size: 16px; 
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+ }
+ .signup__container--signup a:hover {
+    text-decoration: underline;
+ }
+.input {
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 2px solid white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding:  0 20px;
+    outline: none;
+    height: 50px;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;letter-spacing: 1px;
+    margin: 10px 0;
+}
+/* =============================== N O T F O U N D ================================== */
+.not-found {
+    background: linear-gradient(to top, rgb(88, 95, 115, .8) 20%, rgba(26, 27, 38, 1) 90%);
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.not-found h2 {
+    font-size: 200px;
+    font-weight: 900;
+    height: 200px;
+}
+.not-found p {
+    font-size: 76px;
+}
+/* =============================== F O O T E R ===================================== */
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100%;
+    color: white;
+}
+.footer__social-media {
+    width: 20%;
+    margin-left: 50px;
+    display: flex;
+    cursor: pointer;
+}
+.social-media__facebook {
+    margin-right: 16px;
+    height: 44px;
+}
+.social-media__instagram {
+    margin-right: 16px;
+    height: 44px;
+}
+.social-media__twitter {
+    margin-right: 16px;
+    height: 44px;
+}
+.social-media__tiktok {
+    margin-right: 16px;
+    height: 44px;
+}
+.footer__service {
+    margin-left: 50px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.footer__service a {
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 16px;
+    text-decoration: none;
+    color: white;
+}
+.footer__service a:hover {
+    text-decoration: underline;
+}
+.footer__copyright-instance {
+    margin-left: 50px;
+    font-size: 12px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+/* =========================================================================== */
+
